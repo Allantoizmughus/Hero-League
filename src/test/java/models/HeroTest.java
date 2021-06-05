@@ -22,4 +22,10 @@ public class HeroTest {
         Hero hero=new Hero("Superleague");
         assertEquals(true, hero instanceof Hero);
     }
+
+    @Test
+    public void heroInstantiateWithContent_true() throws Exception{
+        Hero hero=new Hero("Superleague");
+        assertEquals("Superleague", hero.getContent());
+    }
 }
