@@ -1,13 +1,25 @@
 package models;
 
 import junit.framework.TestCase;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-public class HeroTest extends TestCase {
+import static org.junit.Assert.*;
 
+public class HeroTest {
+
+    @Before
     public void setUp() throws Exception {
-        super.setUp();
     }
 
+    @After
     public void tearDown() throws Exception {
+    }
+
+    @Test
+    public void instanceOfClassCreated_true() throws Exception{
+        Hero hero=new Hero("Superleague");
+        assertEquals(true, hero instanceof Hero);
     }
 }
