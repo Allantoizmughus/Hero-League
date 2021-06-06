@@ -19,25 +19,41 @@ public class HeroTest {
 
     @Test
     public void instanceOfClassCreated_true() throws Exception{
-        Hero hero=new Hero("Superleague","",25);
+        Hero hero=new Hero("Superleague","",25,"Fire Breather","Water");
         assertEquals(true, hero instanceof Hero);
     }
 
     @Test
     public void heroInstantiateWithContent_true() throws Exception{
-        Hero hero=new Hero("Superleague","",25);
+        Hero hero=new Hero("Superleague","",25,"Fire Breather","Water");
         assertEquals("Superleague", hero.getContent());
     }
     @Test
     public void bringsName_true() {
-        Hero hero = new Hero("Big crew","Mafia",25);
+        Hero hero = new Hero("Big crew","Mafia",25,"Fire Breather","Water");
         assertEquals("Mafia",hero.getName());
     }
 
     @Test
     public void bringsAge_true(){
-        Hero hero=new Hero("Big crew","Mafia",25);
+        Hero hero=new Hero("Big crew","Mafia",25,"Fire Breather","Water");
         assertEquals(25,hero.getAge());
+
+    }
+    @Test
+    public void bringsSuperPowers_true(){
+        Hero hero=new Hero("Big Crew","Mafia",25,"Fire Breather","Water");
+        assertEquals("Fire Breather",hero.getPower());
+    }
+    @Test
+    public void bringsWeakness_true(){
+        Hero hero=new Hero("Big Crew","Mafia",25,"Fire Breather","Water");
+        assertEquals("Water",hero.getWeakness());
+
+    }
+
+    @Test
+    public void allHerosAreReturned_true(){
 
     }
 

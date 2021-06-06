@@ -8,14 +8,18 @@ public class Hero {
     private String content;
     private String name;
     private int age;
+    private String power;
+    private String weakness;
     private static List<Hero> instances = new ArrayList<Hero>();
 
 
-    public Hero(String content,String name,int age){
+    public Hero(String content,String name,int age,String power,String weakness){
 
         this.content=content;
         this.name=name;
         this.age=age;
+        this.power=power;
+        this.weakness=weakness;
     }
 
     public String getContent(){
@@ -28,6 +32,14 @@ public class Hero {
 
     public int getAge(){
         return age;
+    }
+
+    public String getPower(){
+        return power;
+    }
+
+    public String getWeakness(){
+        return weakness;
     }
 
 }
