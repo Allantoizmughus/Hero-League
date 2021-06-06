@@ -23,6 +23,8 @@ public class TeamTest {
 
     @Test
     public void bring_maxSize_5(){
+        Team team=new Team("Superleague","No Hunger",5);
+         assertEquals(5,team.getMaxSize());
     }
 
 

@@ -15,5 +15,8 @@ public class Team {
         this.max_size=max_size;
         instances.add(this);
     }
+    public int getMaxSize(){
+        return max_size;
+    }
 
 }
