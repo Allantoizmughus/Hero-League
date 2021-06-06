@@ -13,6 +13,7 @@ public class Team {
         this.name=name;
         this.cause=cause;
         this.max_size=max_size;
+        instances.add(this);
     }
 
 }
