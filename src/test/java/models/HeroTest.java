@@ -67,4 +67,11 @@ public class HeroTest {
         assertEquals(1,hero.getId());
     }
 
+    @Test
+    public void find_returnsCorrectHero() throws Exception{
+        Hero.clearAllHeros();
+        Hero hero=new Hero("Big crew","Mafia",25,"Fire Breather","Water",1);
+        assertEquals(Hero.find(hero.getId()), hero);
+    }
+
 }

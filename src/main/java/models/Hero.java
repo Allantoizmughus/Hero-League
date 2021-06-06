@@ -58,5 +58,13 @@ public class Hero {
         return id;
     }
 
+    public static Hero find(int id) {
+        try {
+            return instances.get(id - 1);
+        } catch (IndexOutOfBoundsException exception) {
+            return null;
+        }
+    }
+
 
 }
