@@ -11,9 +11,10 @@ public class Hero {
     private String power;
     private String weakness;
     private static List<Hero> instances = new ArrayList<Hero>();
+    private int id;
 
 
-    public Hero(String content,String name,int age,String power,String weakness){
+    public Hero(String content,String name,int age,String power,String weakness,int id){
 
         this.content=content;
         this.name=name;
@@ -21,6 +22,7 @@ public class Hero {
         this.power=power;
         this.weakness=weakness;
         instances.add(this);
+        this.id= instances.size();
     }
 
     public String getContent(){
@@ -50,6 +52,10 @@ public class Hero {
 
     public static void clearAllHeros(){
      instances.clear();
+    }
+
+    public int getId(){
+        return id;
     }
 
 
