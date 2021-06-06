@@ -64,6 +64,19 @@ public class Hero {
         } catch (IndexOutOfBoundsException exception) {
             return null;
         }
+
+    }
+
+    public static boolean findHeroByName(String name){
+        boolean isAvailable = false;
+        for (int i =0; i<instances.size(); i++)
+        {
+            if (name.equalsIgnoreCase(instances.get(i).name) )
+            {
+                isAvailable = true;
+            }
+        }
+        return isAvailable;
     }
 
 
