@@ -22,6 +22,18 @@ public class TeamTest {
     }
 
     @Test
+    public void brings_name(){
+        Team team=new Team("Superleague","No Hunger",5);
+        assertEquals("Superleague",team.getName());
+    }
+
+    @Test
+    public void brings_cause(){
+        Team team=new Team("Superleague","No Hunger",5);
+        assertEquals("No Hunger",team.getCause());
+    }
+
+    @Test
     public void bring_maxSize_5(){
         Team team=new Team("Superleague","No Hunger",5);
          assertEquals(5,team.getMaxSize());

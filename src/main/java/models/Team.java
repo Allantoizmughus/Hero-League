@@ -19,4 +19,12 @@ public class Team {
         return max_size;
     }
 
+    public String getName(){
+        return name;
+    }
+
+    public String getCause(){
+        return cause;
+    }
+
 }
