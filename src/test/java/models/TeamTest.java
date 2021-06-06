@@ -45,21 +45,42 @@ public class TeamTest {
         Team teamTwo=new Team("Conka","No Racism",5);
         assertTrue(Team.getAll().contains(team));
         assertTrue(Team.getAll().contains(teamTwo));
-
     }
 
     @Test
     public void clearAllTeamsCorrectly_0(){
-        Team.clear();
+        Team.clearAllTeams();
         assertEquals(Team.getAll().size(),0);
     }
 
     @Test
     public void bringsIdOfTeam(){
-        Team.clear();
+        Team.clearAllTeams();
         Team team=new Team("Superleague","No Hunger",5);
         assertEquals(1,team.getId());
     }
 
+    @Test
+    public void find_TeamWithId(){
+        Team.clearAllTeams();
+        Team team=new Team("Superleague","No Hunger",5);
+        assertEquals(Team.find(team.getId()),team);
+    }
+
+    @Test
+    public void getTeam_initiallyReturnsEmptyArrayList_0(){
+        Team.clearAllTeams();
+        Team team=new Team("Superleague","No Hunger",5);
+        assertEquals(0,team.getHeros().size());
+    }
+
+    @Test
+    public void addHerosToTeam(){
+        Team team=new Team("Superleague","No Hunger",5);
+        Hero hero=new Hero("Big Crew","Mafia",25,"Fire Breather","Water",1) ;
+        team.addHero(hero);
+        assertTrue(team.getHeros().contains(hero));
+
+    }
 
 }

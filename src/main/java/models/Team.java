@@ -8,8 +8,8 @@ public class Team {
     private  String cause;
     private int max_size;
     private static List<Team> instances=new ArrayList<Team>();
-    private List<Hero>heros;
     private int id;
+    private List<Hero> heros;
 
     public Team(String name, String cause, int max_size){
         this.name=name;
@@ -18,6 +18,7 @@ public class Team {
         instances.add(this);
         heros=new ArrayList<Hero>();
         id=instances.size();
+        heros=new ArrayList<Hero>();
     }
     public int getMaxSize(){
         return max_size;
@@ -35,12 +36,25 @@ public class Team {
         return instances;
     }
 
-    public static void clear(){
+    public static void clearAllTeams(){
         instances.clear();
     }
 
     public int getId(){
         return id;
     }
+    public static Team find(int id){
+        return instances.get(id-1);
+    }
+
+    public List<Hero> getHeros(){
+        return heros;
+    }
+
+    public void addHero(Hero hero) {
+
+        heros.add(hero);
+    }
+
 
 }
