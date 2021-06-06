@@ -19,13 +19,26 @@ public class HeroTest {
 
     @Test
     public void instanceOfClassCreated_true() throws Exception{
-        Hero hero=new Hero("Superleague");
+        Hero hero=new Hero("Superleague","",25);
         assertEquals(true, hero instanceof Hero);
     }
 
     @Test
     public void heroInstantiateWithContent_true() throws Exception{
-        Hero hero=new Hero("Superleague");
+        Hero hero=new Hero("Superleague","",25);
         assertEquals("Superleague", hero.getContent());
     }
+    @Test
+    public void bringsName_true() {
+        Hero hero = new Hero("Big crew","Mafia",25);
+        assertEquals("Mafia",hero.getName());
+    }
+
+    @Test
+    public void bringsAge_true(){
+        Hero hero=new Hero("Big crew","Mafia",25);
+        assertEquals(25,hero.getAge());
+
+    }
+
 }
