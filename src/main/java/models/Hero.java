@@ -20,6 +20,7 @@ public class Hero {
         this.age=age;
         this.power=power;
         this.weakness=weakness;
+        instances.add(this);
     }
 
     public String getContent(){
@@ -41,5 +42,15 @@ public class Hero {
     public String getWeakness(){
         return weakness;
     }
+
+    public static List<Hero> getAll() {
+
+        return instances;
+    }
+
+    public static void clearAllHeros(){
+     instances.clear();
+    }
+
 
 }

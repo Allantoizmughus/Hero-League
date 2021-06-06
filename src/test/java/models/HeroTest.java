@@ -15,6 +15,7 @@ public class HeroTest {
 
     @After
     public void tearDown() throws Exception {
+        Hero.clearAllHeros();
     }
 
     @Test
@@ -54,7 +55,10 @@ public class HeroTest {
 
     @Test
     public void allHerosAreReturned_true(){
-
+        Hero hero=new Hero("Big Crew","Mafia",25,"Fire Breather","Water");
+        Hero heroTwo=new Hero("Believes","SuperCat",21,"crawls on walls","water");
+        assertTrue(Hero.getAll().contains(hero));
+        assertTrue(Hero.getAll().contains(heroTwo));
     }
 
 }
