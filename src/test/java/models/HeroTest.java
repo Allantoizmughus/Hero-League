@@ -20,7 +20,7 @@ public class HeroTest {
 
     @Test
     public void instanceOfClassCreated_true() throws Exception{
-        Hero hero=new Hero("Superleague","",25,"Fire Breather","Water",1);
+        Hero hero=new Hero("Superleague","Mafia",25,"Fire Breather","Water",1);
         assertEquals(true, hero instanceof Hero);
     }
 

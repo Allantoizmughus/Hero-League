@@ -72,5 +72,12 @@ public class Hero {
         return isAvailable;
     }
 
+    public static Hero setUpNewHero1(){
+        return new Hero("Big Crew","Mafia",25,"Fire Breather","Water",1);
+    }
+    public static Hero setUpNewHero2(){
+        return new Hero("Believes","SuperCat",21,"crawls on walls","water",1);
+    }
+
 
 }

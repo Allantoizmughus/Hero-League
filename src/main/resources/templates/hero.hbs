@@ -1,0 +1,16 @@
+{{#partial "content"}}
+    <div class="container">
+        <h2><a class="btn" href="/hero-form">CREATE HERO</a></h2>
+        <div><h2>This Are The Heroes!</h2></div>
+        {{#each hero}}
+        <div>
+            <p><strong>Hero's Name:</strong>{{hero.name}}</p>
+            <p><strong>Hero's Age:</strong>{{hero.age}}</p>
+            <p><strong>Hero's Power:</strong>{{hero.power}}</p>
+            <p><strong>Hero's weakness:</strong>{{hero.weakness}}</p>
+            <p><strong>Hero's Team:</strong>{{hero.yourteam}}</p>
+        </div>
+        {{/each}}
+    </div>
+{{/partial}}
+{{>layout.hbs}}
