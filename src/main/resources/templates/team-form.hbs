@@ -1,0 +1,29 @@
+{{#partial "content"}}
+
+    <div class=""container>
+
+        <h1>Create Your Dream Team!</h1>
+        <p>No man can stand alone!</p>
+        <form action="/team-form" method="post">
+            <fieldset>
+                <input id="name" name="name" type="text" placeholder="Team Name">
+            </fieldset>
+
+            <fieldset>
+                <input id="cause" name="cause" type="type" placeholder="What you stand for.">
+            </fieldset>
+
+            <fieldset>
+                <input id="max_size" name="max_size" type="text" placeholder="Team number">
+            </fieldset>
+
+            <fieldset>
+                <button type="submit" class="btn btn default">Create Hero</button>
+            </fieldset>
+
+        </form>
+    </div>
+
+{{/partial}}
+
+{{>layout.hbs}}

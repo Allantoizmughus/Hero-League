@@ -24,11 +24,11 @@ public class HeroTest {
         assertEquals(true, hero instanceof Hero);
     }
 
-    @Test
-    public void heroInstantiateWithContent_true() throws Exception{
-        Hero hero=new Hero("Superleague","",25,"Fire Breather","Water",1);
-        assertEquals("Superleague", hero.getContent());
-    }
+//    @Test
+//    public void heroInstantiateWithContent_true() throws Exception{
+//        Hero hero=new Hero("Superleague","",25,"Fire Breather","Water",1);
+//        assertEquals("Superleague", hero.getContent());
+//    }
     @Test
     public void bringsName_true() {
         Hero hero = new Hero("Big crew","Mafia",25,"Fire Breather","Water",1);

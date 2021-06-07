@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.List;
 
 public class Hero {
-    private String content;
     private String name;
     private int age;
     private String power;
@@ -15,18 +14,12 @@ public class Hero {
 
 
     public Hero(String content,String name,int age,String power,String weakness,int id){
-
-        this.content=content;
         this.name=name;
         this.age=age;
         this.power=power;
         this.weakness=weakness;
         instances.add(this);
         this.id= instances.size();
-    }
-
-    public String getContent(){
-        return content;
     }
 
     public String getName() {
