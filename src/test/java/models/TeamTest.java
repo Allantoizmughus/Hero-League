@@ -65,7 +65,7 @@ public class TeamTest {
     public void find_TeamWithId(){
         Team.clearAllTeams();
         Team team=new Team("Superleague","No Hunger",5);
-        assertEquals(Team.find(team.getId()),team);
+        assertEquals(Team.findById(team.getId()),team);
     }
 
     @Test
@@ -89,7 +89,7 @@ public class TeamTest {
     public void addMember_addsMemberToSquad_Hero(){
         Hero newHero = Hero.setUpNewHero1();
         Team testTeam = Team.setUpNewTeam1();
-        Team newTeam = Team.find(1);
+        Team newTeam = Team.findById(1);
         newTeam.clearAllTeamHeros();
         newTeam.getHeros().add(newHero);
         newTeam.getHeros().add(newHero);

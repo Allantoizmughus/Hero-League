@@ -7,8 +7,8 @@ public class Team {
     private  String cause;
     private int max_size;
     private static ArrayList<Team> instances=new ArrayList<Team>();
-    private int teamId;
-    private ArrayList<Hero> teamHeros=new ArrayList<>();
+    private int id;
+    private ArrayList<Hero> teamHeros;
 
     public Team(String name, String cause, int max_size){
         teamName = name;
@@ -16,7 +16,7 @@ public class Team {
         this.cause = cause;
         this.teamHeros = new ArrayList<>();
         instances.add(this);
-        this.teamId = instances.size();
+        this.id = instances.size();
     }
     public int getMaxSize(){
         return max_size=5;
@@ -39,9 +39,10 @@ public class Team {
     }
 
     public int getId(){
-        return teamId;
+        return id;
     }
-    public static Team find(int id){
+
+    public static Team findById(int id){
         return instances.get(id-1);
     }
 
