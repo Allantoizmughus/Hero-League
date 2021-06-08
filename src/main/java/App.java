@@ -97,6 +97,25 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
         //create a team and display
+        post("/team/new",(request,response)-> {
+            Map<String, Object> model = new HashMap<>();
+            String teamName = request.queryParams("teamName");
+            Integer max_size = Integer.parseInt(request.queryParams("max_size"));
+            String cause = request.queryParams("cause");
+            Team newTeam = new Team(teamName,cause,max_size);
+            request.session().attribute("item",teamName);
+            model.put("item",request.session().attribute("item"));
+            return new ModelAndView(model,"success.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        //get hero by id
+        get("/new/:id",(req, res) ->{
+            Map<String, Object> model = new HashMap<>();
+            int idOfHero = Integer.parseInt(req.params(":id"));
+            Hero foundHero = Hero.find(idOfHero);
+            model.put("hero",foundHero);
+            return new ModelAndView(model, "herolist.hbs");
+        }, new HandlebarsTemplateEngine());
 
 
     }
