@@ -67,7 +67,7 @@ public class App {
 
         get("/team", (request, response)->{
             Map<String, Object> model=new HashMap<>();
-            return new ModelAndView(model, "team-form.hbs");
+            return new ModelAndView(model, "team.hbs");
         }, new HandlebarsTemplateEngine());
 
 
