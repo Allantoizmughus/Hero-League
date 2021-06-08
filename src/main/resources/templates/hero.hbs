@@ -3,11 +3,13 @@
         <h2><a class="btn btn-yellow" href="/hero-form">CREATE HERO</a></h2>
         <div><h2>This Are The Heroes!</h2></div>
         {{#each hero}}
-        <div>
+        <div class="card">
+        <div class="card-body">
             <p><strong>Hero's Name:</strong>{{name}}</p>
             <p><strong>Hero's Age:</strong>{{age}}</p>
             <p><strong>Hero's Power:</strong>{{power}}</p>
             <p><strong>Hero's weakness:</strong>{{weakness}}</p>
+        </div>
         </div>
         {{/each}}
     </div>

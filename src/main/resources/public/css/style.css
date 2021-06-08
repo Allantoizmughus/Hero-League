@@ -1,0 +1,50 @@
+body{
+width:100% auto;
+background-image:url("/images/chen-liu-unsplash.jpg");
+background-size:100% auto;
+
+}
+a{
+background-color:yellow;
+border-style:none;
+border-radius: 10px;
+margin:15px;
+font-size:20px;
+}
+#nav{
+margin:15px;
+}
+h1{
+font-style:italic;
+color:white;
+
+}
+
+.card{
+display:flex;
+flex-direction:column;
+}
+
+.card-body{
+width:250px;
+border-radius:2px;
+margin:5px;
+padding:5px;
+background-color: yellow;
+}
+.card{
+display:flex;
+justify-content:center;
+align-content:center;
+margin:20px;
+}
+.container{
+margin-left:200px;
+}
+input{
+width:350px;
+height:40px;
+}
+.form{
+margin-top:70px;
+}
