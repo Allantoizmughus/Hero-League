@@ -1,9 +1,10 @@
 package models;
-import org.junit.Test;
-
-import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class TeamTest {
 
@@ -18,7 +19,7 @@ public class TeamTest {
     @Test
     public void create_instanceofTeam_true(){
         Team team=new Team("Superleague","No Hunger",5);
-        assertEquals(true,team instanceof Team);
+        assertTrue(team instanceof Team);
     }
 
     @Test
@@ -74,13 +75,35 @@ public class TeamTest {
         assertEquals(0,team.getHeros().size());
     }
 
-    @Test
-    public void addHerosToTeam(){
-        Team team=new Team("Superleague","No Hunger",5);
-        Hero hero=new Hero("Big Crew","Mafia",25,"Fire Breather","Water",1) ;
-        team.addHero(hero);
-        assertTrue(team.getHeros().contains(hero));
+//    @Test
+//    public void addHerosToTeam(){
+//        Team team=new Team("Superleague","No Hunger",5);
+//        Hero hero=new Hero("Mafia",25,"Fire Breather","Water") ;
+//        team.addHero(hero);
+//        assertTrue(team.getHeros().contains(hero));
+//
+//    }
 
+
+    @Test
+    public void addMember_addsMemberToSquad_Hero(){
+        Hero newHero = Hero.setUpNewHero1();
+        Team testTeam = Team.setUpNewTeam1();
+        Team newTeam = Team.find(1);
+        newTeam.clearAllTeamHeros();
+        newTeam.getHeros().add(newHero);
+        newTeam.getHeros().add(newHero);
+        assertEquals(2,newTeam.getHeros().size());
+    }
+
+    @Test
+    public void setNewMember_hero(){
+        Hero.clearAllHeros();
+        Hero newHero = Hero.setUpNewHero1();
+        Team testTeam = Team.setUpNewTeam1();
+        testTeam.addHero(newHero);
+
+        assertEquals(1,testTeam.getHeros().get(0).getId());
     }
 
 }

@@ -1,19 +1,17 @@
 package models;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 public class Hero {
     private String name;
     private int age;
     private String power;
     private String weakness;
-    private static List<Hero> instances = new ArrayList<Hero>();
+    private static ArrayList<Hero> instances = new ArrayList<Hero>();
     private int id;
 
 
-    public Hero(String content,String name,int age,String power,String weakness,int id){
+    public Hero(String name,Integer age,String power,String weakness){
         this.name=name;
         this.age=age;
         this.power=power;
@@ -38,7 +36,7 @@ public class Hero {
         return weakness;
     }
 
-    public static List<Hero> getAll() {
+    public static ArrayList<Hero> getAll() {
 
         return instances;
     }
@@ -73,10 +71,10 @@ public class Hero {
     }
 
     public static Hero setUpNewHero1(){
-        return new Hero("Big Crew","Mafia",25,"Fire Breather","Water",1);
+        return new Hero("Mafia",25,"Fire Breather","Water");
     }
     public static Hero setUpNewHero2(){
-        return new Hero("Believes","SuperCat",21,"crawls on walls","water",1);
+        return new Hero("SuperCat",21,"crawls on walls","water");
     }
 
 

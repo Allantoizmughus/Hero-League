@@ -1,0 +1,30 @@
+{{#partial "content"}}
+    <div class="container">
+        <h2><a CLASS="btn" href="/team-form">CREATE TEAM</a></h2>
+
+        {{#if teams}}
+        <h2><a>HERE ARE THE TEAMS!</a></h2>
+            {{#each}}
+                <div>
+                    <h1>{{teamName}}</h1>
+                    <p>Id: {{teamId}}</p>
+                    <p>Purpose: {{cause}}</p>
+                    <p>Max participants: {{ max_size }}</p>
+                    <br><br>
+                    <h2>MEMBERS</h2>
+                    {{#each teamHeros}}
+                            <div class="member-cont">
+                                <h5>Name: {{this.name}}</h5>
+                                <h5>Power: {{power}}</h5>
+                            </div>
+                        {{/each}}
+                </div>
+            {{/each}}
+            {{else}}
+            <p>Create a Team</p>
+        {{/if}}
+
+
+    </div>
+    {{/partial}}
+{{>layout.hbs}}

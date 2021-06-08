@@ -1,38 +1,36 @@
 package models;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Team {
-    private String name;
+    private String teamName;
     private  String cause;
     private int max_size;
-    private static List<Team> instances=new ArrayList<Team>();
-    private int id;
-    private List<Hero> heros;
+    private static ArrayList<Team> instances=new ArrayList<Team>();
+    private int teamId;
+    private ArrayList<Hero> teamHeros=new ArrayList<>();
 
     public Team(String name, String cause, int max_size){
-        this.name=name;
-        this.cause=cause;
-        this.max_size=max_size;
+        teamName = name;
+        max_size = max_size;
+        this.cause = cause;
+        this.teamHeros = new ArrayList<>();
         instances.add(this);
-        heros=new ArrayList<Hero>();
-        id=instances.size();
-        heros=new ArrayList<Hero>();
+        this.teamId = instances.size();
     }
     public int getMaxSize(){
-        return max_size;
+        return max_size=5;
     }
 
     public String getName(){
-        return name;
+        return teamName;
     }
 
     public String getCause(){
         return cause;
     }
 
-    public static List<Team> getAll(){
+    public static ArrayList<Team> getAll(){
         return instances;
     }
 
@@ -41,20 +39,25 @@ public class Team {
     }
 
     public int getId(){
-        return id;
+        return teamId;
     }
     public static Team find(int id){
         return instances.get(id-1);
     }
 
-    public List<Hero> getHeros(){
-        return heros;
+    public ArrayList<Hero> getHeros(){
+        return teamHeros;
     }
 
     public void addHero(Hero hero) {
 
-        heros.add(hero);
+        teamHeros.add(hero);
     }
+    public void clearAllTeamHeros(){ getHeros().clear(); }
+
+    public static Team setUpNewTeam1(){return new Team("Superleague","No Hunger",5);}
+    public static Team setUpNewTeam2(){return new Team("Conka","No Racism",5);}
+
 
 
 }

@@ -1,7 +1,10 @@
 {{#partial "content"}}
     <div class="container">
         <h2>GREAT!</h2>
-        <P><strong>{{hero}}</strong> has been successfully created</P>
+        <P><strong>{{item}}</strong> has been successfully created</P>
+        <h3>{{hero.name}}</h3>
+
+        <a class="btn btn-green" href="/hero">View Heroes</a>
     </div>
 {{/partial}}
 {{>layout.hbs}}

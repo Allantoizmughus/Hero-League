@@ -1,18 +1,21 @@
 import models.Hero;
-import models.Team;
+import spark.ModelAndView;
+import spark.template.handlebars.HandlebarsTemplateEngine;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import spark.ModelAndView;
-import spark.template.handlebars.HandlebarsTemplateEngine;
-import static spark.Spark.*;
+import static spark.Spark.get;
+import static spark.Spark.staticFileLocation;
 
 public class App {
+
+
     public static void main(String[] args) {
         staticFileLocation("/public");
+        Hero.setUpNewHero1();
+        Hero.setUpNewHero2();
 
         //get:display homepage
         get("/", (request, response) -> {
@@ -37,28 +40,32 @@ public class App {
             return new ModelAndView(model, "hero.hbs");
         }, new HandlebarsTemplateEngine());
 
+         //new hero
+        get("new/hero",(request,response)->{
+            Map<String, Object> model=new HashMap<>();
+            String name=request.queryParams("name");
+            Integer age=Integer.parseInt(request.queryParams("age"));
+            String power=request.queryParams("power");
+            String weakness=request.queryParams("weakness");
+            Hero createHero=new Hero(name,age,power,weakness);
+            request.session().attribute("item",name);
+            model.put("item",request.session().attribute("item"));
+            model.put("createHero",createHero);
+            return new ModelAndView(model, "success.hbs");
+        },new HandlebarsTemplateEngine());
 
-//         //new hero
-//        get("/hero",(request,response)->{
-//            Map<String, Object> model=new HashMap<>();
-//            String name=request.queryParams("name");
-//            int age=Integer.parseInt(request.queryParams("age"));
-//            String power=request.queryParams("power");
-//            String weakness=request.queryParams("weakness");
-//            String yourTeam=request.queryParams("yourTeam");
-//            model.put("name",name);
-//            model.put("age",age);
-//            model.put("power",power);
-//            model.put("weakness",weakness);
-//            model.put("yourTeam",yourTeam);
-//            model.put("template","templates/hero.hbs");
-//            return new ModelAndView(model, "hero.hbs");
-//
-//        },new HandlebarsTemplateEngine());
+        //find single hero
+        get("/new/:id",(req, res) ->{
+            Map<String, Object> model = new HashMap<>();
+            int idOfHero = Integer.parseInt(req.params(":id"));
+            Hero foundHero = Hero.find(idOfHero);
+            model.put("hero",foundHero);
+            return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
 
         //get:display team form
 
-        get("/team-form", (request, response)->{
+        get("/team", (request, response)->{
             Map<String, Object> model=new HashMap<>();
             return new ModelAndView(model, "team-form.hbs");
         }, new HandlebarsTemplateEngine());
