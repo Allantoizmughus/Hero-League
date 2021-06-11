@@ -18,11 +18,11 @@ public class Team {
         this.id = instances.size();
     }
     public int getMaxSize(){
-        return this.max_size=5;
+        return this.max_size;
     }
 
     public String getName(){
-        return this.teamName;
+        return teamName;
     }
 
     public String getCause(){
