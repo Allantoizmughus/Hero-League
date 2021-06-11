@@ -10,19 +10,19 @@ public class Team {
     private ArrayList<Hero> teamHeros;
 
     public Team(String name, String cause, int max_size){
-        teamName = name;
-        max_size = max_size;
+        this.teamName = name;
+        this.max_size = max_size;
         this.cause = cause;
         this.teamHeros = new ArrayList<>();
         instances.add(this);
         this.id = instances.size();
     }
     public int getMaxSize(){
-        return max_size=5;
+        return this.max_size=5;
     }
 
     public String getName(){
-        return teamName;
+        return this.teamName;
     }
 
     public String getCause(){

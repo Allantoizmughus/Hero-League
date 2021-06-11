@@ -4,13 +4,15 @@
 
         <div class="teams">
         {{#if teams}}
-        <h2><a>HERE ARE THE TEAMS!</a></h2>
+        <h2>HERE ARE THE TEAMS!</h2>
             {{#each teams}}
                 <div>
+                    <div class="card-body">
                     <h1>{{teamName}}</h1>
                     <p>Id: {{id}}</p>
                     <p>Purpose: {{cause}}</p>
                     <p>Max participants: {{ max_size }}</p>
+                    </div>
                     <br><br>
                     <h2>MEMBERS</h2>
                     {{#each teamHeros}}

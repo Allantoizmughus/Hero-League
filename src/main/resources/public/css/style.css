@@ -20,6 +20,10 @@ color:white;
 
 }
 
+h2{
+color:Green;
+}
+
 .card{
 display:flex;
 flex-direction:column;

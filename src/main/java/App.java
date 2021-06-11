@@ -24,6 +24,7 @@ public class App {
         Hero.setUpNewHero1();
         Hero.setUpNewHero2();
         Team.setUpNewTeam1();
+        Team.setUpNewTeam2();
 
         //get:display homepage
         get("/", (request, response) -> {
@@ -113,7 +114,7 @@ public class App {
             Team newTeam = new Team(teamName,cause,max_size);
             request.session().attribute("item",teamName);
             model.put("item",request.session().attribute("item"));
-            return new ModelAndView(model,"success.hbs");
+            return new ModelAndView(model,"success2.hbs");
         }, new HandlebarsTemplateEngine());
 
         //get hero by id
