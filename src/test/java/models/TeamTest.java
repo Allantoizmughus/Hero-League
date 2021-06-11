@@ -44,14 +44,14 @@ public class TeamTest {
     public void returnsAllTeamsCorrectly(){
         Team team=new Team("Superleague","No Hunger",5);
         Team teamTwo=new Team("Conka","No Racism",5);
-        assertTrue(Team.getAll().contains(team));
-        assertTrue(Team.getAll().contains(teamTwo));
+        assertTrue(Team.getInstances().contains(team));
+        assertTrue(Team.getInstances().contains(teamTwo));
     }
 
     @Test
     public void clearAllTeamsCorrectly_0(){
         Team.clearAllTeams();
-        assertEquals(Team.getAll().size(),0);
+        assertEquals(Team.getInstances().size(),0);
     }
 
     @Test

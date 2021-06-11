@@ -57,8 +57,8 @@ public class HeroTest {
     public void allHerosAreReturned_true(){
         Hero hero=new Hero("Mafia",25,"Fire Breather","Water");
         Hero heroTwo=new Hero("SuperCat",21,"crawls on walls","water");
-        assertTrue(Hero.getAll().contains(hero));
-        assertTrue(Hero.getAll().contains(heroTwo));
+        assertTrue(Hero.getAllInstances().contains(hero));
+        assertTrue(Hero.getAllInstances().contains(heroTwo));
     }
 //    @Test
 //    public void getId_1(){

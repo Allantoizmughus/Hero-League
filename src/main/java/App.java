@@ -23,6 +23,7 @@ public class App {
         staticFileLocation("/public");
         Hero.setUpNewHero1();
         Hero.setUpNewHero2();
+        Team.setUpNewTeam1();
 
         //get:display homepage
         get("/", (request, response) -> {
@@ -42,7 +43,7 @@ public class App {
         //post:process hero page
         get("/hero",(request, response) ->{
             Map<String, Object> model = new HashMap<>();
-            ArrayList<Hero> hero = Hero.getAll();
+            ArrayList<Hero> hero = Hero.getAllInstances();
             model.put("hero",hero);
             return new ModelAndView(model, "hero.hbs");
         }, new HandlebarsTemplateEngine());
@@ -94,9 +95,9 @@ public class App {
         //display teams/team page
         get("/team",(request, response) ->{
             Map<String, Object> model = new HashMap<>();
-            ArrayList<Team> teams = Team.getAll();
+            ArrayList<Team> teams = Team.getInstances();
             model.put("teams",teams);
-            ArrayList<Hero> members = Hero.getAll();
+            ArrayList<Hero> members = Hero.getAllInstances();
             model.put("heros",members);
             Team newTeam = Team.findById(1);
             model.put("allTeamMembers", newTeam.getHeros());

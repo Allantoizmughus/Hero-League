@@ -1,5 +1,4 @@
 package models;
-
 import java.util.ArrayList;
 
 public class Team {
@@ -27,10 +26,10 @@ public class Team {
     }
 
     public String getCause(){
-        return cause;
+        return this.cause;
     }
 
-    public static ArrayList<Team> getAll(){
+    public static ArrayList<Team> getInstances(){
         return instances;
     }
 

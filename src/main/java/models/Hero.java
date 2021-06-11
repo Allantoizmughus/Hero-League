@@ -21,22 +21,22 @@ public class Hero {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public int getAge(){
-        return age;
+        return this.age;
     }
 
     public String getPower(){
-        return power;
+        return this.power;
     }
 
     public String getWeakness(){
-        return weakness;
+        return this.weakness;
     }
 
-    public static ArrayList<Hero> getAll() {
+    public static ArrayList<Hero> getAllInstances() {
 
         return instances;
     }
@@ -50,11 +50,7 @@ public class Hero {
     }
 
     public static Hero find(int id) {
-        try {
             return instances.get(id - 1);
-        } catch (IndexOutOfBoundsException exception) {
-            return null;
-        }
 
     }
 
