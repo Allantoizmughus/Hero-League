@@ -10,7 +10,7 @@ public class Team {
     private ArrayList<Hero> teamHeros;
 
     public Team(String name, String cause, int max_size){
-        this.teamName = name;
+        this.teamName =name;
         this.max_size = max_size;
         this.cause = cause;
         this.teamHeros = new ArrayList<>();

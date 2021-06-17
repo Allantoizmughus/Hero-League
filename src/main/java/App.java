@@ -66,7 +66,7 @@ public class App {
         //process and display heroes
         post("/new/hero",(request,response)->{
             Map<String, Object> model=new HashMap<>();
-            String name=request.queryParams("name");
+            String name=request.queryParams("teamName");
             Integer age=Integer.parseInt(request.queryParams("age"));
             String power=request.queryParams("power");
             String weakness=request.queryParams("weakness");
@@ -108,7 +108,7 @@ public class App {
         //create a team and display
         post("/team/new",(request,response)-> {
             Map<String, Object> model = new HashMap<>();
-            String teamName = request.queryParams("teamName");
+            String teamName = request.queryParams("name");
             Integer max_size = Integer.parseInt(request.queryParams("max_size"));
             String cause = request.queryParams("cause");
             Team newTeam = new Team(teamName,cause,max_size);
